@@ -23,7 +23,17 @@ gmtdefaults -D > .gmtdefaults
 # Step-4. Extract a subset of ETOPO1m for the Mariana Trench area
 grdcut earth_relief_01m.grd -R120/160/5/30 -Gmt_relief2.nc
 # Step-5. Make color palette
-gmt makecpt -Cglobe.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Cglobe.cpt -V -T-11000/2000 > myocean2.cpt
+gmt makecpt -Cgeo.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Cearth.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Cibcso.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Cbathy.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Cterra.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Crelief.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Ctopo.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Cetopo1.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Cworld.cpt -V -T-11000/2000 > myocean2.cpt
+#gmt makecpt -Cpanoply.cpt -V -T-11000/2000 > myocean2.cpt
 # Step-6. Make raster image
 gmt grdimage mt_relief2.nc -Cmyocean2.cpt -R120/160/5/30 -JC140/17/6i -P -I+a15 -K > $ps
 # Step-7. Add legend
